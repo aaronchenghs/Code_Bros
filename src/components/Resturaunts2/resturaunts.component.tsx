@@ -120,9 +120,11 @@ const RestaurantList: React.FC = () => {
         <button type="submit">Search</button>
       </form>
       {selectedRestaurantId.length ? (
-        <button onClick={(): void => setSelectedRestaurantId("")}>
-          Return to List
-        </button>
+        <ThemeButton
+          onClick={(): void => setSelectedRestaurantId("")}
+          text={"Return to List"}
+          buttonType={"normal"}
+        />
       ) : null}
       <div
         style={{
