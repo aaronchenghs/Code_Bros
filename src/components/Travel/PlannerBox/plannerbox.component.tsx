@@ -217,7 +217,11 @@ const PlannerBox = (): JSX.Element => {
         </div>
         <div style={{ marginTop: "1%", marginBottom: "1%" }}>
           Currently Selected Restaurant:{" "}
-          {$selectedRestaurant ? $selectedRestaurant : "N/A"}
+          {$selectedRestaurant ? (
+            <i style={{ color: "green" }}>{$selectedRestaurant}</i>
+          ) : (
+            <label style={{ color: "red" }}>N/A</label>
+          )}
         </div>
         {addingTime && (
           <form

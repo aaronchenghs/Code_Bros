@@ -102,7 +102,13 @@ const RestaurantList: React.FC = () => {
   };
 
   return (
-    <div className={styles["parent-div"]}>
+    <div
+      style={
+        selectedRestaurantId === ""
+          ? { overflowY: "hidden" }
+          : { overflowY: "auto" }
+      }
+    >
       <div className={styles["form-holder"]}></div>
       <form style={{ width: 420 }} onSubmit={handleFormSubmit}>
         <input
@@ -123,6 +129,7 @@ const RestaurantList: React.FC = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          overflowY: "auto",
         }}
       >
         <div className={styles["restaurant-list-container"]}>
